@@ -22,15 +22,20 @@ export const auth = betterAuth({
     },
   },
 
-  user: {
-    additionalFields: {
-      role: {
-        type: "string",
-        defaultValue: "user", // user | writer | admin
-        input: false, // client can't set this directly (security)
-      },
+user: {
+  additionalFields: {
+    role: {
+      type: "string",
+      defaultValue: "user", // user | writer | admin
+      input: false, // still secure — client can't set this via Better Auth directly
+    },
+    writerVerified: {
+      type: "boolean",
+      defaultValue: false,
+      input: false,
     },
   },
+},
 
   plugins: [jwt()],
 });
