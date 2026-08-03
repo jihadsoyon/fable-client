@@ -11,6 +11,7 @@ export function AuthProvider({ children }) {
   const value = {
     user: session?.user || null,
     role: session?.user?.role || "user",
+    writerVerified: session?.user?.writerVerified || false, // NEW
     isLoading: isPending,
     error,
     refetchSession: refetch,
