@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { Search } from "lucide-react";
 import { useDebounce } from "@/hooks/useDebounce";
-import { GENRES } from "@/lib/ebookConstants";
+import { GENRES } from "@/lib/genreConstants";
 
 export default function FilterBar() {
   const router = useRouter();
