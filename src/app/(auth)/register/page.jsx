@@ -76,7 +76,7 @@ export default function RegisterPage() {
         } finally {
             setLoading(false);
         }
-    };
+    };gi
 
     return (
         <div>
