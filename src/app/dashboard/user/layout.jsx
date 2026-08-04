@@ -1,5 +1,8 @@
+"use client";
+
 import { User, ShoppingBag, Library, Bookmark } from "lucide-react";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
+import DashboardSidebar from "../DashboardSidebar";
+// import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 
 const links = [
   { href: "/dashboard/user", label: "Profile", icon: User },

@@ -5,7 +5,7 @@ import GenreGrid from "@/components/home/GenreGrid";
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="bg-amber-50/30 dark:bg-gray-950">
       <Hero />
       <FeaturedEbooks />
       <TopWriters />

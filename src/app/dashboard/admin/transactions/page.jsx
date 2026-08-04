@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Receipt, ChevronLeft, ChevronRight } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import toast from "react-hot-toast";
-import TableSkeleton from "@/components/dashboard/TableSkeleton";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+// import TableSkeleton from "@/components/dashboard/TableSkeleton";
+import EmptyDashboardState from "../../EmptyDashboardState";
+import TableSkeleton from "../../TableSkeleton";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
 
 export default function AdminTransactionsPage() {
   const [transactions, setTransactions] = useState([]);

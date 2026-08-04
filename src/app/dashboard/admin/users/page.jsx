@@ -5,10 +5,12 @@ import { Users, Trash2 } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import { useAuth } from "@/providers/AuthProvider";
 import toast from "react-hot-toast";
-import TableSkeleton from "@/components/dashboard/TableSkeleton";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+// import TableSkeleton from "@/components/dashboard/TableSkeleton";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
 import ConfirmDialog from "@/components/dashboard/ConfirmDialog";
 import RoleSelect from "@/components/dashboard/RoleSelect";
+import EmptyDashboardState from "../../EmptyDashboardState";
+import TableSkeleton from "../../TableSkeleton";
 
 export default function ManageUsersPage() {
   const { user: currentUser } = useAuth();

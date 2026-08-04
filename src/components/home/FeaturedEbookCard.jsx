@@ -12,13 +12,14 @@ export default function FeaturedEbookCard({ ebook, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+      className="group overflow-hidden rounded-xl border border-amber-100 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
     >
       <Link href={`/ebooks/${ebook._id}`}>
         <ImageWithSkeleton
           src={ebook.coverImage}
           alt={ebook.title}
-          className="h-56 w-full"
+          title={ebook.title}
+          className="h-64 w-full"
         />
         <div className="p-4">
           <span className="text-xs font-medium text-brand-600">{ebook.genre}</span>

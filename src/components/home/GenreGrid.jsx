@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { GENRES } from "@/lib/genreConstants";
 
 export default function GenreGrid() {
@@ -13,10 +14,18 @@ export default function GenreGrid() {
           <Link
             key={genre.name}
             href={`/ebooks?genre=${encodeURIComponent(genre.name)}`}
-            className="flex flex-col items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white py-8 text-center transition-all hover:-translate-y-1 hover:border-brand-400 hover:shadow-md dark:border-gray-800 dark:bg-gray-900"
+            className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 sm:aspect-square"
           >
-            <span className="text-3xl">{genre.emoji}</span>
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
+            <Image
+              src={genre.image}
+              alt={genre.name}
+              fill
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 300px"
+              quality={75}
+              className="object-cover object-center transition-transform duration-300 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <span className="relative z-10 w-full p-3 text-center text-sm font-semibold text-white">
               {genre.name}
             </span>
           </Link>

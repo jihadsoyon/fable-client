@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { PenSquare, PlusCircle, BarChart3, Bookmark } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-import BecomeWriterCard from "@/components/dashboard/BecomeWriterCard";
 import DashboardLoader from "@/components/dashboard/DashboardLoader";
+import BecomeWriterCard from "@/components/dashboard/BecomeWriterCard";
+import DashboardSidebar from "../DashboardSidebar";
+// import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
+// import BecomeWriterCard from "@/components/dashboard/BecomeWriterCard";
+// import DashboardLoader from "@/components/dashboard/DashboardLoader";
 
 const links = [
   { href: "/dashboard/writer", label: "Manage Ebooks", icon: PenSquare },

@@ -4,8 +4,11 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Users, BookOpen, Receipt, LayoutDashboard } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
 import DashboardLoader from "@/components/dashboard/DashboardLoader";
+import DashboardSidebar from "../DashboardSidebar";
+// import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
+// import DashboardLoader from "@/components/dashboard/DashboardLoader";
+
 
 const links = [
   { href: "/dashboard/admin", label: "Overview", icon: LayoutDashboard },

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Library } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import toast from "react-hot-toast";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
-import PurchasedEbookCard from "@/components/dashboard/PurchasedEbookCard";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+// import PurchasedEbookCard from "@/components/dashboard/PurchasedEbookCard";
+import EmptyDashboardState from "../../EmptyDashboardState";
+import PurchasedEbookCard from "../../PurchasedEbookCard";
 
 export default function LibraryPage() {
   const [purchases, setPurchases] = useState([]);

@@ -5,8 +5,10 @@ import { BarChart3 } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import { useAuth } from "@/providers/AuthProvider";
 import toast from "react-hot-toast";
-import TableSkeleton from "@/components/dashboard/TableSkeleton";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+// import TableSkeleton from "@/components/dashboard/TableSkeleton";
+import EmptyDashboardState from "../../EmptyDashboardState";
+import TableSkeleton from "../../TableSkeleton";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
 
 export default function SalesHistoryPage() {
   const { user } = useAuth();

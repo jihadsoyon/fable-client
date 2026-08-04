@@ -7,9 +7,11 @@ import { PenSquare, Pencil, Trash2, Eye, EyeOff, PlusCircle } from "lucide-react
 import { apiClient } from "@/lib/apiClient.client";
 import { useAuth } from "@/providers/AuthProvider";
 import toast from "react-hot-toast";
-import TableSkeleton from "@/components/dashboard/TableSkeleton";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+// import TableSkeleton from "@/components/dashboard/TableSkeleton";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
 import ConfirmDialog from "@/components/dashboard/ConfirmDialog";
+import EmptyDashboardState from "../EmptyDashboardState";
+import TableSkeleton from "../TableSkeleton";
 
 export default function ManageEbooksPage() {
   const { user } = useAuth();

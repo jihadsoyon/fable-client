@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { Bookmark } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import toast from "react-hot-toast";
-import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
-import BookmarkedEbookCard from "@/components/dashboard/BookmarkedEbookCard";
+// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
+import BookmarkedEbookCard from "../../BookmarkedEbookCard";
+import EmptyDashboardState from "../../EmptyDashboardState";
+// import BookmarkedEbookCard from "@/components/dashboard/BookmarkedEbookCard";
 
 export default function WriterBookmarksPage() {
   const [bookmarks, setBookmarks] = useState([]);

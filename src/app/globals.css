@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@heroui/styles/global.css";
+
 
 @theme {
   --color-brand-50: #fdf4ff;

@@ -26,8 +26,8 @@ export default async function FeaturedEbooks() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
-        {ebooks.map((ebook, i) => (
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {ebooks.slice(0, 6).map((ebook, i) => (
           <FeaturedEbookCard key={ebook._id} ebook={ebook} index={i} />
         ))}
       </div>
