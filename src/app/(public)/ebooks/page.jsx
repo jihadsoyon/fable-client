@@ -1,3 +1,4 @@
+
 import { apiServer } from "@/lib/apiClient.server";
 import FilterBar from "@/components/ebooks/FilterBar";
 import EbookCard from "@/components/ebooks/EbookCard";
@@ -29,10 +30,10 @@ export default async function BrowseEbooksPage({ searchParams }) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-      <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-2 font-display text-2xl font-bold text-ink-800 dark:text-parchment-100">
         Browse Ebooks
       </h1>
-      <p className="mb-6 text-sm text-gray-500">
+      <p className="mb-6 text-sm text-ink-700/60 dark:text-parchment-300/60">
         Discover original ebooks from writers around the world
       </p>
 

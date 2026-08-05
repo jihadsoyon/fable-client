@@ -1,68 +1,68 @@
-/* @import "tailwindcss";
+  /* @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+  @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --color-brand-50: #fdf4ff;
-  --color-brand-100: #fae8ff;
-  --color-brand-500: #a855f7;
-  --color-brand-600: #9333ea;
-  --color-brand-700: #7e22ce;
+  @theme {
+    --color-brand-50: #fdf4ff;
+    --color-brand-100: #fae8ff;
+    --color-brand-500: #a855f7;
+    --color-brand-600: #9333ea;
+    --color-brand-700: #7e22ce;
 
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-}
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  }
 
-body {
-  @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
-} */
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+  } */
 
 
 
-@import "tailwindcss";
+  @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+  @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  /* Warm cream/parchment backgrounds */
-  --color-parchment-50: #fdfaf3;
-  --color-parchment-100: #f7f0e1;
-  --color-parchment-200: #efe4cc;
-  --color-parchment-300: #e3d3ac;
+  @theme {
+    /* Warm cream/parchment backgrounds */
+    --color-parchment-50: #fdfaf3;
+    --color-parchment-100: #f7f0e1;
+    --color-parchment-200: #efe4cc;
+    --color-parchment-300: #e3d3ac;
 
-  /* Deep brown / espresso tones */
-  --color-ink-700: #3d2b1f;
-  --color-ink-800: #2b1d14;
-  --color-ink-900: #1a120c;
+    /* Deep brown / espresso tones */
+    --color-ink-700: #3d2b1f;
+    --color-ink-800: #2b1d14;
+    --color-ink-900: #1a120c;
 
-  /* Warm gold/amber accent */
-  --color-gold-400: #d4a24c;
-  --color-gold-500: #b8863a;
-  --color-gold-600: #96692b;
+    /* Warm gold/amber accent */
+    --color-gold-400: #d4a24c;
+    --color-gold-500: #b8863a;
+    --color-gold-600: #96692b;
 
-  /* Brand alias — old components using brand-* keep working, mapped to gold */
-  --color-brand-50: #fdfaf3;
-  --color-brand-100: #f7f0e1;
-  --color-brand-500: #d4a24c;
-  --color-brand-600: #b8863a;
-  --color-brand-700: #96692b;
+    /* Brand alias — old components using brand-* keep working, mapped to gold */
+    --color-brand-50: #fdfaf3;
+    --color-brand-100: #f7f0e1;
+    --color-brand-500: #d4a24c;
+    --color-brand-600: #b8863a;
+    --color-brand-700: #96692b;
 
-  /* Fonts */
-  --font-display: var(--font-serif-display), Georgia, serif;
-  --font-body: var(--font-serif-body), Georgia, serif;
-  --font-sans: var(--font-serif-body), Georgia, serif;
-}
+    /* Fonts */
+    --font-display: var(--font-serif-display), Georgia, serif;
+    --font-body: var(--font-serif-body), Georgia, serif;
+    --font-sans: var(--font-serif-body), Georgia, serif;
+  }
 
-body {
-  @apply bg-parchment-50 text-ink-800 dark:bg-ink-900 dark:text-parchment-100;
-  font-family: var(--font-body);
-}
+  body {
+    @apply bg-parchment-50 text-ink-800 dark:bg-ink-900 dark:text-parchment-100;
+    font-family: var(--font-body);
+  }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-}
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
 
 
 

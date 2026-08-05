@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -80,10 +81,10 @@ export default function RegisterPage() {
 
     return (
         <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <h1 className="font-display text-2xl font-bold text-ink-800 dark:text-parchment-100">
                 Create your account
             </h1>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-sm text-ink-700/60 dark:text-parchment-300/60">
                 Join Fable to read and share original ebooks
             </p>
 
@@ -93,7 +94,7 @@ export default function RegisterPage() {
                         name="name"
                         value={form.name}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+                        className="w-full rounded-lg border border-parchment-300 bg-parchment-50 px-3 py-2.5 text-sm text-ink-800 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
                         placeholder="John Doe"
                     />
                 </FormField>
@@ -104,7 +105,7 @@ export default function RegisterPage() {
                         type="email"
                         value={form.email}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+                        className="w-full rounded-lg border border-parchment-300 bg-parchment-50 px-3 py-2.5 text-sm text-ink-800 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
                         placeholder="you@example.com"
                     />
                 </FormField>
@@ -115,7 +116,7 @@ export default function RegisterPage() {
                         type="password"
                         value={form.password}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+                        className="w-full rounded-lg border border-parchment-300 bg-parchment-50 px-3 py-2.5 text-sm text-ink-800 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
                         placeholder="••••••••"
                     />
                     <PasswordStrength password={form.password} />
@@ -127,7 +128,7 @@ export default function RegisterPage() {
                         type="password"
                         value={form.confirmPassword}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+                        className="w-full rounded-lg border border-parchment-300 bg-parchment-50 px-3 py-2.5 text-sm text-ink-800 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
                         placeholder="••••••••"
                     />
                 </FormField>
@@ -138,8 +139,8 @@ export default function RegisterPage() {
                             type="button"
                             onClick={() => setForm({ ...form, role: "user" })}
                             className={`rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${form.role === "user"
-                                ? "border-brand-600 bg-brand-50 text-brand-700 dark:bg-brand-500/10"
-                                : "border-gray-300 text-gray-600 dark:border-gray-700 dark:text-gray-300"
+                                ? "border-gold-600 bg-parchment-100 text-gold-600 dark:bg-gold-500/10 dark:text-gold-400"
+                                : "border-parchment-300 text-ink-700/70 dark:border-ink-700 dark:text-parchment-300/70"
                                 }`}
                         >
                             Reader
@@ -148,15 +149,15 @@ export default function RegisterPage() {
                             type="button"
                             onClick={() => setForm({ ...form, role: "writer" })}
                             className={`rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${form.role === "writer"
-                                ? "border-brand-600 bg-brand-50 text-brand-700 dark:bg-brand-500/10"
-                                : "border-gray-300 text-gray-600 dark:border-gray-700 dark:text-gray-300"
+                                ? "border-gold-600 bg-parchment-100 text-gold-600 dark:bg-gold-500/10 dark:text-gold-400"
+                                : "border-parchment-300 text-ink-700/70 dark:border-ink-700 dark:text-parchment-300/70"
                                 }`}
                         >
                             Writer
                         </button>
                     </div>
                     {form.role === "writer" && (
-                        <p className="mt-2 text-xs text-gray-500">
+                        <p className="mt-2 text-xs text-ink-700/60 dark:text-parchment-300/60">
                             Writers need to complete a one-time verification payment before
                             publishing ebooks.
                         </p>
@@ -166,23 +167,25 @@ export default function RegisterPage() {
                 <button
                     type="submit"
                     disabled={loading}
-                    className="w-full rounded-lg bg-brand-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+                    className="w-full rounded-lg bg-gold-500 py-2.5 text-sm font-semibold text-parchment-50 transition-colors hover:bg-gold-600 disabled:opacity-60"
                 >
                     {loading ? "Creating account..." : "Create Account"}
                 </button>
             </form>
 
             <div className="my-5 flex items-center gap-3">
-                <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800" />
-                <span className="text-xs text-gray-400">OR</span>
-                <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800" />
+                <div className="h-px flex-1 bg-parchment-300 dark:bg-ink-700" />
+                <span className="font-body text-xs tracking-wide text-ink-700/50 dark:text-parchment-300/50">
+                    OR
+                </span>
+                <div className="h-px flex-1 bg-parchment-300 dark:bg-ink-700" />
             </div>
 
             <GoogleAuth label="Sign up with Google" />
 
-            <p className="mt-6 text-center text-sm text-gray-500">
+            <p className="mt-6 text-center text-sm text-ink-700/60 dark:text-parchment-300/60">
                 Already have an account?{" "}
-                <Link href="/login" className="font-medium text-brand-600 hover:underline">
+                <Link href="/login" className="font-medium text-gold-600 hover:underline dark:text-gold-400">
                     Login
                 </Link>
             </p>

@@ -1,3 +1,4 @@
+
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { apiServer } from "@/lib/apiClient.server";
@@ -15,7 +16,7 @@ export default async function EbookDetailPage({ params }) {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-10 md:grid-cols-2">
-        <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800">
+        <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-parchment-300 dark:border-ink-700">
           <Image
             src={ebook.coverImage}
             alt={ebook.title}
@@ -26,20 +27,24 @@ export default async function EbookDetailPage({ params }) {
         </div>
 
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-brand-600">
+          <p className="text-xs font-medium uppercase tracking-wide text-gold-600 dark:text-gold-400">
             {ebook.genre}
           </p>
-          <h1 className="mt-1 text-3xl font-bold text-gray-900 dark:text-gray-100">
+          <h1 className="mt-1 font-display text-3xl font-bold text-ink-800 dark:text-parchment-100">
             {ebook.title}
           </h1>
-          <p className="mt-2 text-sm text-gray-500">by {ebook.writerName}</p>
+          <p className="mt-2 text-sm text-ink-700/60 dark:text-parchment-300/60">
+            by {ebook.writerName}
+          </p>
 
           <div className="mt-4 flex items-center gap-3">
-            <span className="text-2xl font-bold text-brand-600">${ebook.price}</span>
+            <span className="text-2xl font-bold text-gold-600 dark:text-gold-400">
+              ${ebook.price}
+            </span>
             <span
               className={`rounded-full px-2.5 py-1 text-xs font-medium ${
                 ebook.sold
-                  ? "bg-gray-200 text-gray-600 dark:bg-gray-800 dark:text-gray-400"
+                  ? "bg-parchment-200 text-ink-700/70 dark:bg-ink-700 dark:text-parchment-300/70"
                   : "bg-green-100 text-green-700 dark:bg-green-500/10 dark:text-green-400"
               }`}
             >
@@ -47,11 +52,11 @@ export default async function EbookDetailPage({ params }) {
             </span>
           </div>
 
-          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-4 text-sm text-ink-700/80 dark:text-parchment-300/80">
             {ebook.description}
           </p>
 
-          <p className="mt-4 text-xs text-gray-400">
+          <p className="mt-4 text-xs text-ink-700/50 dark:text-parchment-300/50">
             Uploaded on {new Date(ebook.createdAt).toLocaleDateString()}
           </p>
 
