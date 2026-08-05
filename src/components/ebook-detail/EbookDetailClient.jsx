@@ -18,7 +18,7 @@ export default function EbookDetailClient({ ebook }) {
     <>
       <div className="mt-6 flex gap-3">
         {loading ? (
-          <div className="h-12 flex-1 animate-pulse rounded-lg bg-gray-200 dark:bg-gray-800" />
+          <div className="h-12 flex-1 animate-pulse rounded-lg bg-parchment-200 dark:bg-ink-800" />
         ) : (
           <>
             <PurchaseButton
@@ -38,11 +38,11 @@ export default function EbookDetailClient({ ebook }) {
       </div>
 
       <div className="mt-10">
-        <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-gray-100">
+        <h2 className="mb-3 font-display text-lg font-semibold text-ink-900 dark:text-parchment-100">
           Content
         </h2>
         {hasAccess && !resolvedContent && !loading ? (
-          <div className="h-24 animate-pulse rounded-lg bg-gray-100 dark:bg-gray-900" />
+          <div className="h-24 animate-pulse rounded-lg bg-parchment-100 dark:bg-ink-900" />
         ) : (
           <ContentGate hasAccess={hasAccess} content={resolvedContent} description={ebook.description} />
         )}

@@ -13,7 +13,7 @@ export default function PurchaseButton({ ebookId, isLoggedIn, isOwner, purchased
     return (
       <button
         disabled
-        className="flex-1 cursor-not-allowed rounded-lg bg-gray-200 py-3 text-sm font-semibold text-gray-500 dark:bg-gray-800"
+        className="flex-1 cursor-not-allowed rounded-lg bg-parchment-200 py-3 font-body text-sm font-semibold text-ink-700/60 dark:bg-ink-800 dark:text-parchment-200/60"
       >
         This is your ebook
       </button>
@@ -24,7 +24,7 @@ export default function PurchaseButton({ ebookId, isLoggedIn, isOwner, purchased
     return (
       <button
         disabled
-        className="flex-1 rounded-lg bg-green-100 py-3 text-sm font-semibold text-green-700 dark:bg-green-500/10 dark:text-green-400"
+        className="flex-1 rounded-lg bg-green-100 py-3 font-body text-sm font-semibold text-green-700 dark:bg-green-500/10 dark:text-green-400"
       >
         Already Purchased
       </button>
@@ -51,7 +51,7 @@ export default function PurchaseButton({ ebookId, isLoggedIn, isOwner, purchased
     <button
       onClick={handleBuy}
       disabled={loading}
-      className="flex-1 rounded-lg bg-brand-600 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+      className="flex-1 cursor-pointer rounded-lg bg-gold-600 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-gold-700 disabled:opacity-60"
     >
       {loading ? "Redirecting to checkout..." : "Buy Now"}
     </button>
