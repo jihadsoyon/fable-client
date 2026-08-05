@@ -80,7 +80,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
           value={form.title}
           onChange={handleChange}
           placeholder="The title of your ebook"
-          className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+          className="w-full rounded-lg border border-parchment-300 px-3 py-2.5 font-body text-sm text-ink-900 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
         />
       </FormField>
 
@@ -90,7 +90,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
             name="genre"
             value={form.genre}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+            className="w-full rounded-lg border border-parchment-300 px-3 py-2.5 font-body text-sm text-ink-900 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
           >
             <option value="">Select a genre</option>
             {GENRES.map((g) => (
@@ -110,7 +110,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
             value={form.price}
             onChange={handleChange}
             placeholder="e.g. 9.99"
-            className="w-full rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+            className="w-full rounded-lg border border-parchment-300 px-3 py-2.5 font-body text-sm text-ink-900 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
           />
         </FormField>
       </div>
@@ -122,7 +122,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
           onChange={handleChange}
           rows={3}
           placeholder="A short teaser shown to everyone before purchase"
-          className="w-full resize-none rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+          className="w-full resize-none rounded-lg border border-parchment-300 px-3 py-2.5 font-body text-sm text-ink-900 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
         />
       </FormField>
 
@@ -133,7 +133,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
           onChange={handleChange}
           rows={10}
           placeholder="Paste or write the full ebook content here"
-          className="w-full resize-y rounded-lg border border-gray-300 px-3 py-2.5 text-sm focus:border-brand-500 focus:outline-none dark:border-gray-700 dark:bg-gray-800"
+          className="w-full resize-y rounded-lg border border-parchment-300 px-3 py-2.5 font-body text-sm text-ink-900 focus:border-gold-500 focus:outline-none dark:border-ink-700 dark:bg-ink-800 dark:text-parchment-100"
         />
       </FormField>
 
@@ -141,7 +141,7 @@ export default function EbookForm({ initialValues, ebookId, mode = "add" }) {
         <button
           type="submit"
           disabled={submitting}
-          className="rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+          className="cursor-pointer rounded-lg bg-gold-600 px-6 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-gold-700 disabled:opacity-60"
         >
           {submitting
             ? mode === "edit"

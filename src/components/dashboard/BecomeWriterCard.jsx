@@ -24,18 +24,22 @@ export default function BecomeWriterCard({
   };
 
   return (
-    <div className="rounded-2xl border border-brand-200 bg-brand-50 p-6 dark:border-brand-500/20 dark:bg-brand-500/5">
+    <div className="rounded-2xl border border-gold-600/30 bg-gold-50 p-6 dark:border-gold-500/20 dark:bg-gold-500/5">
       <div className="flex items-start gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-700 dark:bg-brand-500/20 dark:text-brand-400">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold-100 text-gold-700 dark:bg-gold-500/20 dark:text-gold-400">
           <Sparkles size={20} />
         </div>
         <div className="flex-1">
-          <h3 className="font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{description}</p>
+          <h3 className="font-display font-semibold text-ink-900 dark:text-parchment-100">
+            {title}
+          </h3>
+          <p className="mt-1 font-body text-sm text-ink-700 dark:text-parchment-300">
+            {description}
+          </p>
           <button
             onClick={handleUpgrade}
             disabled={loading}
-            className="mt-4 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+            className="mt-4 cursor-pointer rounded-lg bg-gold-600 px-5 py-2.5 font-body text-sm font-semibold text-white transition-colors hover:bg-gold-700 disabled:opacity-60"
           >
             {loading ? "Redirecting to checkout..." : buttonLabel}
           </button>

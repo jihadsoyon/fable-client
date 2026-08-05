@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -38,15 +39,15 @@ export default function AvatarUpload({ value, onChange, fallbackText }) {
           src={value}
           alt="Profile photo"
           fill
-          className="rounded-full object-cover"
+          className="rounded-full object-cover ring-2 ring-gold-400/30"
         />
       ) : (
-        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-brand-100 text-2xl font-bold text-brand-700 dark:bg-brand-500/20 dark:text-brand-400">
+        <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 font-display text-2xl font-bold text-gold-700 dark:bg-gold-500/20 dark:text-gold-400">
           {fallbackText}
         </div>
       )}
 
-      <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/0 transition-colors group-hover:bg-black/40">
+      <div className="absolute inset-0 flex items-center justify-center rounded-full bg-ink-900/0 transition-colors group-hover:bg-ink-900/40">
         {uploading ? (
           <Loader2 size={20} className="animate-spin text-white" />
         ) : (
