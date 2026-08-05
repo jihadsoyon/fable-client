@@ -23,7 +23,7 @@ export default function MonthlySalesChart({ data }) {
 
   if (chartData.length === 0) {
     return (
-      <div className="flex h-64 items-center justify-center text-sm text-gray-400">
+      <div className="flex h-64 items-center justify-center font-body text-sm text-ink-700/50 dark:text-parchment-200/50">
         No sales data yet
       </div>
     );
@@ -32,19 +32,19 @@ export default function MonthlySalesChart({ data }) {
   return (
     <ResponsiveContainer width="100%" height={280}>
       <LineChart data={chartData}>
-        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" className="text-gray-100 dark:text-gray-800" />
-        <XAxis dataKey="label" tick={{ fontSize: 12 }} stroke="currentColor" className="text-gray-500" />
-        <YAxis tick={{ fontSize: 12 }} stroke="currentColor" className="text-gray-500" />
+        <CartesianGrid strokeDasharray="3 3" stroke="currentColor" className="text-parchment-200 dark:text-ink-700" />
+        <XAxis dataKey="label" tick={{ fontSize: 12 }} stroke="currentColor" className="text-ink-700/60 dark:text-parchment-200/60" />
+        <YAxis tick={{ fontSize: 12 }} stroke="currentColor" className="text-ink-700/60 dark:text-parchment-200/60" />
         <Tooltip
-          contentStyle={{ borderRadius: 8, fontSize: 13, border: "1px solid #e5e7eb" }}
+          contentStyle={{ borderRadius: 8, fontSize: 13, border: "1px solid #efe4cc" }}
           formatter={(value) => [`$${value}`, "Revenue"]}
         />
         <Line
           type="monotone"
           dataKey="revenue"
-          stroke="#9333ea"
+          stroke="#b8863a"
           strokeWidth={2.5}
-          dot={{ r: 4, fill: "#9333ea" }}
+          dot={{ r: 4, fill: "#b8863a" }}
         />
       </LineChart>
     </ResponsiveContainer>
