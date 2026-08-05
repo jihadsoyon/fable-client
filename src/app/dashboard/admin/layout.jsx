@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect } from "react";
@@ -6,8 +7,6 @@ import { Users, BookOpen, Receipt, LayoutDashboard } from "lucide-react";
 import { useAuth } from "@/providers/AuthProvider";
 import DashboardLoader from "@/components/dashboard/DashboardLoader";
 import DashboardSidebar from "../DashboardSidebar";
-// import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
-// import DashboardLoader from "@/components/dashboard/DashboardLoader";
 
 
 const links = [

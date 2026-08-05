@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -32,20 +33,20 @@ export default function AdminOverviewPage() {
   if (loading) {
     return (
       <div>
-        <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+        <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
           Dashboard Overview
         </h1>
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
-              className="h-28 animate-pulse rounded-2xl bg-gray-200 dark:bg-gray-800"
+              className="h-28 animate-pulse rounded-2xl bg-parchment-200 dark:bg-ink-700"
             />
           ))}
         </div>
         <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className="h-72 animate-pulse rounded-2xl bg-gray-200 dark:bg-gray-800" />
-          <div className="h-72 animate-pulse rounded-2xl bg-gray-200 dark:bg-gray-800" />
+          <div className="h-72 animate-pulse rounded-2xl bg-parchment-200 dark:bg-ink-700" />
+          <div className="h-72 animate-pulse rounded-2xl bg-parchment-200 dark:bg-ink-700" />
         </div>
       </div>
     );
@@ -53,7 +54,7 @@ export default function AdminOverviewPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
         Dashboard Overview
       </h1>
 
@@ -80,20 +81,20 @@ export default function AdminOverviewPage() {
           icon={DollarSign}
           label="Total Revenue"
           value={`$${(summary?.totalRevenue ?? 0).toFixed(2)}`}
-          accent="bg-amber-100 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400"
+          accent="bg-gold-500/10 text-gold-600 dark:bg-gold-500/10 dark:text-gold-400"
         />
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900">
-          <h2 className="mb-4 text-sm font-semibold text-gray-900 dark:text-gray-100">
+        <div className="rounded-2xl border border-parchment-300 bg-parchment-100 p-5 dark:border-ink-700 dark:bg-ink-800">
+          <h2 className="mb-4 font-display text-sm font-semibold text-ink-800 dark:text-parchment-100">
             Monthly Sales
           </h2>
           <MonthlySalesChart data={monthlySales} />
         </div>
 
-        <div className="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900">
-          <h2 className="mb-4 text-sm font-semibold text-gray-900 dark:text-gray-100">
+        <div className="rounded-2xl border border-parchment-300 bg-parchment-100 p-5 dark:border-ink-700 dark:bg-ink-800">
+          <h2 className="mb-4 font-display text-sm font-semibold text-ink-800 dark:text-parchment-100">
             Ebooks by Genre
           </h2>
           <GenrePieChart data={genreData} />
