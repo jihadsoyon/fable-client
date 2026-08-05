@@ -1,3 +1,25 @@
+// "use client";
+
+// import Navbar from "@/components/navbar/Navbar";
+// import Footer from "@/components/footer/Footer";
+// import { useRequireAuth } from "@/hooks/useRequireAuth";
+// import DashboardLoader from "@/components/dashboard/DashboardLoader";
+
+// export default function DashboardLayout({ children }) {
+//   const { ready } = useRequireAuth();
+
+//   return (
+//     <>
+//       <Navbar />
+//       <main className="min-h-screen bg-gray-50 dark:bg-gray-950/40">
+//         {ready ? children : <DashboardLoader />}
+//       </main>
+//       <Footer />
+//     </>
+//   );
+// }
+
+
 "use client";
 
 import Navbar from "@/components/navbar/Navbar";
@@ -11,7 +33,7 @@ export default function DashboardLayout({ children }) {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-950/40">
+      <main className="min-h-screen bg-parchment-50 dark:bg-ink-900">
         {ready ? children : <DashboardLoader />}
       </main>
       <Footer />
