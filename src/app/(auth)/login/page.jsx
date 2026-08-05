@@ -71,7 +71,7 @@ export default function LoginPage() {
             type="button"
             onClick={() => handleDemoLogin(account)}
             disabled={loading}
-            className="rounded-lg border border-brand-200 bg-brand-50 px-2 py-2 text-xs font-medium text-brand-700 transition-colors hover:bg-brand-100 disabled:opacity-60 dark:border-brand-800 dark:bg-brand-500/10 dark:text-brand-300 dark:hover:bg-brand-500/20"
+            className="rounded-lg border border-brand-200 bg-brand-50 px-2 py-2 text-xs font-medium text-brand-700 transition-colors hover:bg-brand-100 disabled:opacity-60 dark:border-brand-800 dark:bg-brand-500/10 dark:text-brand-300 dark:hover:bg-brand-500/20 cursor-pointer"
           >
             {account.label}
           </button>
@@ -112,7 +112,7 @@ export default function LoginPage() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-lg bg-brand-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60"
+          className="w-full rounded-lg bg-brand-600 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-60 cursor-pointer"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
@@ -124,7 +124,7 @@ export default function LoginPage() {
         <div className="h-px flex-1 bg-gray-200 dark:bg-gray-800" />
       </div>
 
-      <GoogleAuth label="Continue with Google" />
+        <GoogleAuth label="Continue with Google" />
 
       <p className="mt-6 text-center text-sm text-gray-500">
         Don&apos;t have an account?{" "}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const slides = [
   {
@@ -37,7 +38,7 @@ export default function Hero() {
 
   return (
     <section className="relative h-[280px] overflow-hidden sm:h-[340px] md:h-[380px] lg:h-[720px]">
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="sync">
         <motion.div
           key={index}
           initial={{ opacity: 0 }}
@@ -87,12 +88,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Link
-            href="/ebooks"
-            className="mt-5 inline-block rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-brand-700 shadow-lg transition-transform hover:scale-105"
-          >
-            Browse Ebooks
-          </Link>
+        <Link
+          href="/ebooks"
+          className="group inline-flex items-center gap-2 rounded-full border border-brand-600/40 bg-brand-600/10 px-5 py-2.5 text-sm font-semibold text-brand-600 dark:text-brand-400 transition-all hover:bg-brand-600 hover:text-white dark:hover:text-white mt-5"
+        >
+          Browse Ebooks
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </Link>
         </motion.div>
 
         {/* arrows */}
