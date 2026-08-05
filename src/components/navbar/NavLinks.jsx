@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -24,13 +25,19 @@ export default function NavLinks({ className }) {
             key={link.href}
             href={link.href}
             className={cn(
-              "text-sm font-medium transition-colors hover:text-brand-600",
+              "relative inline-block pb-1 text-[13px] font-medium tracking-wide uppercase transition-colors hover:text-brand-600",
               isActive
-                ? "text-brand-600"
+                ? "text-brand-700 dark:text-brand-400"
                 : "text-gray-600 dark:text-gray-300"
             )}
           >
             {link.label}
+            <span
+              className={cn(
+                "absolute inset-x-0 -bottom-0.5 h-[2px] rounded-full bg-brand-600 transition-transform duration-300",
+                isActive ? "scale-x-100" : "scale-x-0"
+              )}
+            />
           </Link>
         );
       })}

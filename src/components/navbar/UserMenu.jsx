@@ -1,3 +1,4 @@
+
 "use client";
 import { useState } from "react";
 import Image from "next/image";
@@ -15,9 +16,14 @@ export default function UserMenu() {
 
   if (!user) {
     return (
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         <Link href="/login" className="text-sm font-medium text-gray-600 hover:text-brand-600 dark:text-gray-300">Login</Link>
-        <Link href="/register" className="rounded-full bg-brand-600 px-4 py-2 text-sm font-medium text-white hover:bg-brand-700">Register</Link>
+        <Link
+          href="/register"
+          className="rounded-full border border-brand-600 px-5 py-2 text-sm font-medium text-brand-700 transition-colors hover:bg-brand-600 hover:text-white dark:text-brand-400 dark:hover:text-white"
+        >
+          Register
+        </Link>
       </div>
     );
   }
@@ -33,7 +39,7 @@ export default function UserMenu() {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-brand-100 text-sm font-semibold text-brand-700 dark:bg-brand-500/20 dark:text-brand-400"
+        className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-brand-100 text-sm font-semibold text-brand-700 ring-2 ring-transparent transition-all hover:ring-brand-300 dark:bg-brand-500/20 dark:text-brand-400"
       >
         {user.image ? (
           <Image src={user.image} alt={user.name || "User"} fill className="object-cover" />
@@ -44,7 +50,7 @@ export default function UserMenu() {
       {open && (
         <div
           onMouseLeave={() => setOpen(false)}
-          className="absolute right-0 mt-2 w-44 rounded-lg border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-800 dark:bg-gray-900"
+          className="absolute right-0 mt-2 w-44 rounded-2xl border border-gray-200 bg-white py-1 shadow-lg dark:border-gray-800 dark:bg-gray-900"
         >
           <Link href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800">
             Dashboard
