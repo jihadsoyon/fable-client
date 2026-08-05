@@ -6,12 +6,13 @@ import BookmarkButton from "./BookmarkButton";
 import ContentGate from "./ContentGate";
 
 export default function EbookDetailClient({ ebook }) {
-  const { purchased, bookmarked, loading, isLoggedIn, refresh } = useEbookStatus(ebook._id);
+  const { purchased, bookmarked, content, loading, isLoggedIn, refresh } = useEbookStatus(ebook._id);
 
-  // Server already knows if the viewer is the owner (from JWT, if logged in
-  // at request time). We re-derive access here for the client-rendered gate
-  // in case the session state changes after initial load.
+  // Server-rendered ebook.content is null unless the owner/admin was
+  // authenticated at request time. For a purchasing reader, the real
+  // content only arrives via the authenticated client-side re-fetch above.
   const hasAccess = ebook.isOwner || purchased || ebook.fullContentAccess;
+  const resolvedContent = ebook.content ?? content;
 
   return (
     <>
@@ -40,7 +41,11 @@ export default function EbookDetailClient({ ebook }) {
         <h2 className="mb-3 text-lg font-semibold text-gray-900 dark:text-gray-100">
           Content
         </h2>
-        <ContentGate hasAccess={hasAccess} content={ebook.content} description={ebook.description} />
+        {hasAccess && !resolvedContent && !loading ? (
+          <div className="h-24 animate-pulse rounded-lg bg-gray-100 dark:bg-gray-900" />
+        ) : (
+          <ContentGate hasAccess={hasAccess} content={resolvedContent} description={ebook.description} />
+        )}
       </div>
     </>
   );

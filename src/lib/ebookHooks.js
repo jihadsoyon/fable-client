@@ -8,12 +8,14 @@ export function useEbookStatus(ebookId) {
   const { user, isLoading: authLoading } = useAuth();
   const [purchased, setPurchased] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
+  const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const refresh = useCallback(async () => {
     if (!user) {
       setPurchased(false);
       setBookmarked(false);
+      setContent(null);
       setLoading(false);
       return;
     }
@@ -26,6 +28,14 @@ export function useEbookStatus(ebookId) {
       ]);
       setPurchased(purchaseRes.purchased);
       setBookmarked(bookmarkRes.bookmarked);
+
+      // If purchased (or owner/admin), re-fetch the ebook WITH the auth
+      // token attached so the server can return the unlocked content —
+      // the initial server-rendered fetch had no token to check against.
+      if (purchaseRes.purchased) {
+        const fullEbook = await apiClient.get(`/ebooks/${ebookId}`);
+        setContent(fullEbook.content);
+      }
     } catch (error) {
       console.error("Failed to fetch ebook status:", error);
     } finally {
@@ -37,5 +47,12 @@ export function useEbookStatus(ebookId) {
     if (!authLoading) refresh();
   }, [authLoading, refresh]);
 
-  return { purchased, bookmarked, loading: authLoading || loading, refresh, isLoggedIn: !!user };
+  return {
+    purchased,
+    bookmarked,
+    content,
+    loading: authLoading || loading,
+    refresh,
+    isLoggedIn: !!user,
+  };
 }

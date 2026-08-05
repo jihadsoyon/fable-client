@@ -1,5 +1,6 @@
 import { apiServer } from "@/lib/apiClient.server";
 import FeaturedEbookCard from "./FeaturedEbookCard";
+import Link from "next/link";
 
 export default async function FeaturedEbooks() {
   let ebooks = [];
@@ -24,6 +25,12 @@ export default async function FeaturedEbooks() {
             Freshly published stories worth discovering
           </p>
         </div>
+        <Link
+          href="/ebooks"
+          className="mt-5 inline-block px-6 py-2.5 text-sm font-semibold text-brand-700 shadow-lg transition-transform hover:scale-105"
+        >
+          Browse Ebooks
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
