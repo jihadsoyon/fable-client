@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -6,10 +7,9 @@ import Image from "next/image";
 import { ShoppingBag } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import toast from "react-hot-toast";
-// import TableSkeleton from "@/components/dashboard/TableSkeleton";
+
 import EmptyDashboardState from "../../EmptyDashboardState";
 import TableSkeleton from "../../TableSkeleton";
-// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
 
 export default function PurchaseHistoryPage() {
   const [purchases, setPurchases] = useState([]);
@@ -26,7 +26,7 @@ export default function PurchaseHistoryPage() {
   if (loading) {
     return (
       <div>
-        <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+        <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
           Purchase History
         </h1>
         <TableSkeleton rows={4} cols={4} />
@@ -36,7 +36,7 @@ export default function PurchaseHistoryPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
         Purchase History
       </h1>
 
@@ -49,9 +49,9 @@ export default function PurchaseHistoryPage() {
           ctaHref="/ebooks"
         />
       ) : (
-        <div className="overflow-x-auto rounded-2xl border border-gray-200 dark:border-gray-800">
+        <div className="overflow-x-auto rounded-2xl border border-parchment-300 dark:border-ink-700">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-gray-200 bg-gray-50 text-xs uppercase tracking-wide text-gray-500 dark:border-gray-800 dark:bg-gray-900/60">
+            <thead className="border-b border-parchment-300 bg-parchment-100 text-xs uppercase tracking-wide text-ink-700/60 dark:border-ink-700 dark:bg-ink-800/60 dark:text-parchment-300/60">
               <tr>
                 <th className="px-4 py-3 font-medium">Ebook</th>
                 <th className="px-4 py-3 font-medium">Writer</th>
@@ -60,18 +60,18 @@ export default function PurchaseHistoryPage() {
                 <th className="px-4 py-3 font-medium">Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+            <tbody className="divide-y divide-parchment-200 dark:divide-ink-700">
               {purchases.map((purchase) => (
                 <tr
                   key={purchase.ebookId}
-                  className="bg-white transition-colors hover:bg-gray-50 dark:bg-gray-950 dark:hover:bg-gray-900"
+                  className="bg-parchment-50 transition-colors hover:bg-parchment-100 dark:bg-ink-900 dark:hover:bg-ink-800"
                 >
                   <td className="px-4 py-3">
                     <Link
                       href={`/ebooks/${purchase.ebookId}`}
                       className="flex items-center gap-3"
                     >
-                      <div className="relative h-12 w-9 shrink-0 overflow-hidden rounded-md border border-gray-200 dark:border-gray-800">
+                      <div className="relative h-12 w-9 shrink-0 overflow-hidden rounded-md border border-parchment-300 dark:border-ink-700">
                         <Image
                           src={purchase.coverImage}
                           alt={purchase.title}
@@ -79,18 +79,18 @@ export default function PurchaseHistoryPage() {
                           className="object-cover"
                         />
                       </div>
-                      <span className="line-clamp-1 font-medium text-gray-900 hover:text-brand-600 dark:text-gray-100">
+                      <span className="line-clamp-1 font-medium text-ink-800 hover:text-gold-600 dark:text-parchment-100 dark:hover:text-gold-400">
                         {purchase.title}
                       </span>
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
+                  <td className="px-4 py-3 text-ink-700/70 dark:text-parchment-300/70">
                     {purchase.writerName}
                   </td>
-                  <td className="px-4 py-3 font-medium text-gray-900 dark:text-gray-100">
+                  <td className="px-4 py-3 font-medium text-ink-800 dark:text-parchment-100">
                     ${purchase.amount}
                   </td>
-                  <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
+                  <td className="px-4 py-3 text-ink-700/70 dark:text-parchment-300/70">
                     {new Date(purchase.purchasedAt).toLocaleDateString()}
                   </td>
                   <td className="px-4 py-3">

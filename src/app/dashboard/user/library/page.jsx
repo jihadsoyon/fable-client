@@ -1,11 +1,11 @@
+
+
 "use client";
 
 import { useEffect, useState } from "react";
 import { Library } from "lucide-react";
 import { apiClient } from "@/lib/apiClient.client";
 import toast from "react-hot-toast";
-// import EmptyDashboardState from "@/components/dashboard/EmptyDashboardState";
-// import PurchasedEbookCard from "@/components/dashboard/PurchasedEbookCard";
 import EmptyDashboardState from "../../EmptyDashboardState";
 import PurchasedEbookCard from "../../PurchasedEbookCard";
 
@@ -24,19 +24,19 @@ export default function LibraryPage() {
   if (loading) {
     return (
       <div>
-        <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+        <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
           Purchased Ebooks
         </h1>
         <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
           {Array.from({ length: 4 }).map((_, i) => (
             <div
               key={i}
-              className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800"
+              className="overflow-hidden rounded-xl border border-parchment-300 dark:border-ink-700"
             >
-              <div className="aspect-[3/4] animate-pulse bg-gray-200 dark:bg-gray-800" />
+              <div className="aspect-[3/4] animate-pulse bg-parchment-200 dark:bg-ink-700" />
               <div className="space-y-2 p-4">
-                <div className="h-4 w-3/4 animate-pulse rounded bg-gray-200 dark:bg-gray-800" />
-                <div className="h-3 w-1/2 animate-pulse rounded bg-gray-200 dark:bg-gray-800" />
+                <div className="h-4 w-3/4 animate-pulse rounded bg-parchment-200 dark:bg-ink-700" />
+                <div className="h-3 w-1/2 animate-pulse rounded bg-parchment-200 dark:bg-ink-700" />
               </div>
             </div>
           ))}
@@ -47,7 +47,7 @@ export default function LibraryPage() {
 
   return (
     <div>
-      <h1 className="mb-6 text-xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mb-6 font-display text-xl font-bold text-ink-800 dark:text-parchment-100">
         Purchased Ebooks
       </h1>
 
