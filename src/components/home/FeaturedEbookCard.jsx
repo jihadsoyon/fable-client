@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import Link from "next/link";
@@ -12,7 +14,7 @@ export default function FeaturedEbookCard({ ebook, index }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
       whileHover={{ y: -6 }}
-      className="group overflow-hidden rounded-xl border border-amber-100 bg-white shadow-sm transition-shadow hover:shadow-lg dark:border-gray-800 dark:bg-gray-900"
+      className="group overflow-hidden rounded-sm border border-gold-600/30 bg-ink-800 shadow-sm transition-shadow hover:shadow-lg hover:shadow-gold-900/20"
     >
       <Link href={`/ebooks/${ebook._id}`}>
         <ImageWithSkeleton
@@ -21,18 +23,20 @@ export default function FeaturedEbookCard({ ebook, index }) {
           title={ebook.title}
           className="h-64 w-full"
         />
-        <div className="p-4">
-          <span className="text-xs font-medium text-brand-600">{ebook.genre}</span>
-          <h3 className="mt-1 line-clamp-1 font-semibold text-gray-900 dark:text-gray-100">
+        <div className="border-t border-gold-600/20 p-4">
+          <span className="font-body text-xs font-medium tracking-wide text-gold-400 uppercase">
+            {ebook.genre}
+          </span>
+          <h3 className="mt-1 line-clamp-1 font-display font-semibold text-parchment-100">
             {ebook.title}
           </h3>
-          <p className="mt-1 text-sm text-gray-500">by {ebook.writerName}</p>
+          <p className="mt-1 font-body text-sm text-parchment-200/60">by {ebook.writerName}</p>
           <div className="mt-3 flex items-center justify-between">
-            <span className="font-bold text-gray-900 dark:text-gray-100">
+            <span className="font-display font-bold text-gold-400">
               ${ebook.price}
             </span>
             {ebook.sold && (
-              <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600 dark:bg-red-500/10">
+              <span className="rounded-full bg-red-500/10 px-2 py-0.5 font-body text-xs font-medium text-red-400">
                 Sold
               </span>
             )}

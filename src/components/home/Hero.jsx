@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -57,8 +59,8 @@ export default function Hero() {
             quality={80}
             className="object-cover"
           />
-          {/* readability overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10" />
+          {/* readability overlay — warm brown tint instead of neutral black */}
+          <div className="absolute inset-0 bg-gradient-to-r from-ink-900/80 via-ink-900/40 to-ink-900/10" />
         </motion.div>
       </AnimatePresence>
 
@@ -68,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-xl text-2xl font-bold text-white sm:text-3xl md:text-4xl"
+          className="max-w-xl font-display text-2xl font-bold text-parchment-50 sm:text-3xl md:text-4xl"
         >
           {slide.title}
         </motion.h1>
@@ -78,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-3 max-w-md text-sm text-white/85 sm:text-base"
+          className="mt-3 max-w-md font-body text-sm text-parchment-100/85 sm:text-base"
         >
           {slide.subtitle}
         </motion.p>
@@ -88,13 +90,13 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-        <Link
-          href="/ebooks"
-          className="group inline-flex items-center gap-2 rounded-full border border-brand-600/40 bg-brand-600/10 px-5 py-2.5 text-sm font-semibold text-brand-600 dark:text-brand-400 transition-all hover:bg-brand-600 hover:text-white dark:hover:text-white mt-5"
-        >
-          Browse Ebooks
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Link>
+          <Link
+            href="/ebooks"
+            className="group mt-5 inline-flex items-center gap-2 rounded-full border border-gold-500 bg-gold-500/10 px-5 py-2.5 font-body text-sm font-semibold text-gold-400 backdrop-blur-sm transition-all hover:bg-gold-500 hover:text-ink-900"
+          >
+            Browse Ebooks
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </motion.div>
 
         {/* arrows */}
@@ -120,7 +122,7 @@ export default function Hero() {
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`h-1.5 rounded-full transition-all ${
-                i === index ? "w-5 bg-white" : "w-1.5 bg-white/50"
+                i === index ? "w-5 bg-gold-400" : "w-1.5 bg-parchment-100/40"
               }`}
             />
           ))}
