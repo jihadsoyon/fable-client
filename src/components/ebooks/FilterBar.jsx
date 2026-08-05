@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -46,13 +45,13 @@ export default function FilterBar() {
       <div className="relative">
         <Search
           size={18}
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-600/60"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-600/60 dark:text-gold-400/60"
         />
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search by title or writer name..."
-          className="w-full rounded-sm border border-gold-600/30 bg-parchment-50 py-2.5 pl-10 pr-4 font-body text-sm text-ink-800 placeholder:text-ink-700/40 focus:border-gold-500 focus:outline-none dark:bg-ink-800 dark:text-parchment-100"
+          className="w-full rounded-sm border border-gold-600/30 bg-white py-2.5 pl-10 pr-4 font-body text-sm text-ink-900 placeholder:text-ink-700/40 focus:border-gold-500 focus:outline-none dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100 dark:placeholder:text-parchment-200/40"
         />
       </div>
 
@@ -60,7 +59,7 @@ export default function FilterBar() {
         <select
           value={genre}
           onChange={(e) => updateParam("genre", e.target.value)}
-          className="rounded-sm border border-gold-600/30 bg-parchment-50 px-3 py-2 font-body text-sm text-ink-800 dark:bg-ink-800 dark:text-parchment-100"
+          className="rounded-sm border border-gold-600/30 bg-white px-3 py-2 font-body text-sm text-ink-900 dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100"
         >
           <option value="">All Genres</option>
           {GENRES.map((g) => (
@@ -73,7 +72,7 @@ export default function FilterBar() {
         <select
           value={availability}
           onChange={(e) => updateParam("availability", e.target.value)}
-          className="rounded-sm border border-gold-600/30 bg-parchment-50 px-3 py-2 font-body text-sm text-ink-800 dark:bg-ink-800 dark:text-parchment-100"
+          className="rounded-sm border border-gold-600/30 bg-white px-3 py-2 font-body text-sm text-ink-900 dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100"
         >
           <option value="">All Availability</option>
           <option value="available">Available</option>
@@ -85,20 +84,20 @@ export default function FilterBar() {
           value={minPrice}
           onChange={(e) => updateParam("minPrice", e.target.value)}
           placeholder="Min $"
-          className="w-24 rounded-sm border border-gold-600/30 bg-parchment-50 px-3 py-2 font-body text-sm text-ink-800 placeholder:text-ink-700/40 dark:bg-ink-800 dark:text-parchment-100"
+          className="w-24 rounded-sm border border-gold-600/30 bg-white px-3 py-2 font-body text-sm text-ink-900 placeholder:text-ink-700/40 dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100 dark:placeholder:text-parchment-200/40"
         />
         <input
           type="number"
           value={maxPrice}
           onChange={(e) => updateParam("maxPrice", e.target.value)}
           placeholder="Max $"
-          className="w-24 rounded-sm border border-gold-600/30 bg-parchment-50 px-3 py-2 font-body text-sm text-ink-800 placeholder:text-ink-700/40 dark:bg-ink-800 dark:text-parchment-100"
+          className="w-24 rounded-sm border border-gold-600/30 bg-white px-3 py-2 font-body text-sm text-ink-900 placeholder:text-ink-700/40 dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100 dark:placeholder:text-parchment-200/40"
         />
 
         <select
           value={sort}
           onChange={(e) => updateParam("sort", e.target.value)}
-          className="ml-auto rounded-sm border border-gold-600/30 bg-parchment-50 px-3 py-2 font-body text-sm text-ink-800 dark:bg-ink-800 dark:text-parchment-100"
+          className="ml-auto rounded-sm border border-gold-600/30 bg-white px-3 py-2 font-body text-sm text-ink-900 dark:border-gold-500/30 dark:bg-ink-800 dark:text-parchment-100"
         >
           <option value="newest">Newest</option>
           <option value="price-asc">Price: Low to High</option>

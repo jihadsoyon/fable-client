@@ -71,8 +71,10 @@ export default function PaymentSuccessClient() {
   if (status === "verifying") {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
-        <Loader2 size={40} className="animate-spin text-brand-600" />
-        <p className="mt-4 text-sm text-gray-500">Verifying your payment...</p>
+        <Loader2 size={40} className="animate-spin text-gold-600" />
+        <p className="mt-4 font-body text-sm text-ink-700/70 dark:text-parchment-200/70">
+          Verifying your payment...
+        </p>
       </div>
     );
   }
@@ -81,20 +83,22 @@ export default function PaymentSuccessClient() {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center">
         <XCircle size={48} className="text-red-500" />
-        <h1 className="mt-4 text-xl font-bold text-gray-900 dark:text-gray-100">
+        <h1 className="mt-4 font-display text-xl font-bold text-ink-900 dark:text-parchment-100">
           Payment Verification Failed
         </h1>
-        <p className="mt-2 max-w-sm text-sm text-gray-500">{errorMessage}</p>
+        <p className="mt-2 max-w-sm font-body text-sm text-ink-700/70 dark:text-parchment-200/70">
+          {errorMessage}
+        </p>
         <div className="mt-6 flex gap-3">
           <Link
             href="/"
-            className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+            className="rounded-lg border border-parchment-300 px-5 py-2.5 font-body text-sm font-medium text-ink-700 transition-colors hover:bg-parchment-100 dark:border-ink-700 dark:text-parchment-200 dark:hover:bg-ink-800"
           >
             Go Home
           </Link>
           <Link
             href="/ebooks"
-            className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700"
+            className="rounded-lg bg-gold-600 px-5 py-2.5 font-body text-sm font-medium text-white transition-colors hover:bg-gold-700"
           >
             Browse Ebooks
           </Link>
@@ -113,10 +117,10 @@ export default function PaymentSuccessClient() {
       className="flex min-h-[60vh] flex-col items-center justify-center px-4 text-center"
     >
       <CheckCircle2 size={52} className="text-green-500" />
-      <h1 className="mt-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+      <h1 className="mt-4 font-display text-2xl font-bold text-ink-900 dark:text-parchment-100">
         {isWriterUpgrade ? "You're now a verified writer!" : "Payment Successful!"}
       </h1>
-      <p className="mt-2 max-w-sm text-sm text-gray-500">
+      <p className="mt-2 max-w-sm font-body text-sm text-ink-700/70 dark:text-parchment-200/70">
         {isWriterUpgrade
           ? "Your writer verification payment went through. You can now publish ebooks on Fable."
           : "Your purchase is confirmed. The full ebook content is now unlocked."}
@@ -125,13 +129,13 @@ export default function PaymentSuccessClient() {
       <div className="mt-6 flex gap-3">
         <Link
           href={isWriterUpgrade ? "/dashboard/writer" : "/dashboard/user"}
-          className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-700"
+          className="rounded-lg bg-gold-600 px-5 py-2.5 font-body text-sm font-medium text-white transition-colors hover:bg-gold-700"
         >
           Go to Dashboard
         </Link>
         <Link
           href="/ebooks"
-          className="rounded-lg border border-gray-300 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800"
+          className="rounded-lg border border-parchment-300 px-5 py-2.5 font-body text-sm font-medium text-ink-700 transition-colors hover:bg-parchment-100 dark:border-ink-700 dark:text-parchment-200 dark:hover:bg-ink-800"
         >
           Browse More Ebooks
         </Link>
