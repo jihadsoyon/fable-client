@@ -31,7 +31,16 @@ export default function GenrePieChart({ data }) {
             <Cell key={entry.genre} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Tooltip contentStyle={{ borderRadius: 8, fontSize: 13, border: "1px solid #efe4cc" }} />
+        <Tooltip
+          contentStyle={{
+            borderRadius: 8,
+            fontSize: 13,
+            border: "1px solid var(--tooltip-border)",
+            backgroundColor: "var(--tooltip-bg)",
+            color: "var(--tooltip-text)",
+          }}
+          itemStyle={{ color: "var(--tooltip-text)" }}
+        />
         <Legend wrapperStyle={{ fontSize: 12 }} />
       </PieChart>
     </ResponsiveContainer>

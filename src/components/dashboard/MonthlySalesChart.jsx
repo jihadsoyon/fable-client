@@ -36,7 +36,15 @@ export default function MonthlySalesChart({ data }) {
         <XAxis dataKey="label" tick={{ fontSize: 12 }} stroke="currentColor" className="text-ink-700/60 dark:text-parchment-200/60" />
         <YAxis tick={{ fontSize: 12 }} stroke="currentColor" className="text-ink-700/60 dark:text-parchment-200/60" />
         <Tooltip
-          contentStyle={{ borderRadius: 8, fontSize: 13, border: "1px solid #efe4cc" }}
+          contentStyle={{
+            borderRadius: 8,
+            fontSize: 13,
+            border: "1px solid var(--tooltip-border)",
+            backgroundColor: "var(--tooltip-bg)",
+            color: "var(--tooltip-text)",
+          }}
+          labelStyle={{ color: "var(--tooltip-text)" }}
+          itemStyle={{ color: "var(--tooltip-text)" }}
           formatter={(value) => [`$${value}`, "Revenue"]}
         />
         <Line

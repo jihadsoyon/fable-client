@@ -1,24 +1,4 @@
-  /* @import "tailwindcss";
-
-  @custom-variant dark (&:where(.dark, .dark *));
-
-  @theme {
-    --color-brand-50: #fdf4ff;
-    --color-brand-100: #fae8ff;
-    --color-brand-500: #a855f7;
-    --color-brand-600: #9333ea;
-    --color-brand-700: #7e22ce;
-
-    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  }
-
-  body {
-    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
-  } */
-
-
-
-  @import "tailwindcss";
+@import "tailwindcss";
 
   @custom-variant dark (&:where(.dark, .dark *));
 
@@ -52,6 +32,18 @@
     --font-sans: var(--font-serif-body), Georgia, serif;
   }
 
+  :root {
+    --tooltip-bg: var(--color-parchment-50);
+    --tooltip-border: var(--color-parchment-300);
+    --tooltip-text: var(--color-ink-800);
+  }
+
+  .dark {
+    --tooltip-bg: var(--color-ink-800);
+    --tooltip-border: var(--color-ink-700);
+    --tooltip-text: var(--color-parchment-100);
+  }
+
   body {
     @apply bg-parchment-50 text-ink-800 dark:bg-ink-900 dark:text-parchment-100;
     font-family: var(--font-body);
@@ -63,8 +55,3 @@
   h4 {
     font-family: var(--font-display);
   }
-
-
-
-
-

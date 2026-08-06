@@ -15,8 +15,8 @@ export default function Navbar() {
           <Image
             src={"/images/logo.png"}
             alt="Fable Logo"
-            width={34}
-            height={34}
+            width={39}
+            height={39}
             className="rounded-md object-contain"
             priority
           />
