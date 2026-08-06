@@ -100,7 +100,7 @@ export default function ManageEbooksPage() {
       ) : (
         <div className="overflow-x-auto rounded-2xl border border-gold-600/20 dark:border-gold-600/20">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-gold-600/20 bg-parchment-100 font-body text-xs uppercase tracking-wide text-ink-700/70 dark:border-gold-600/20 dark:bg-ink-800">
+            <thead className="border-b border-gold-600/20 bg-parchment-100 font-body text-xs uppercase tracking-wide text-ink-700/70 dark:border-gold-600/20 dark:bg-ink-800 dark:text-parchment-200/70">
               <tr>
                 <th className="px-4 py-3 font-medium">Title</th>
                 <th className="px-4 py-3 font-medium">Price</th>
